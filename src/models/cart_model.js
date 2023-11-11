@@ -12,7 +12,7 @@ const cartSchema = new Schema({
     createdOn: { type: Date}
 })
 
-cartSchema.pre('save', (next) => {
+cartSchema.pre('save',  function(next){
    
     this.updatedOn = new Date()
     this.createdOn = new Date()

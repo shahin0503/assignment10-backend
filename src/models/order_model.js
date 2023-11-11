@@ -13,7 +13,7 @@ const orderSchema = new Schema({
     createdOn: { type: Date}
 })
 
-orderSchema.pre('save', (next) => {
+orderSchema.pre('save',  function(next) {
    
     this.updatedOn = new Date()
     this.createdOn = new Date()

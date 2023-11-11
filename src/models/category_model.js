@@ -7,7 +7,7 @@ const categorySchema = new Schema({
     createdOn: { type: Date}
 })
 
-categorySchema.pre('save', (next) => {
+categorySchema.pre('save',  function(next) {
    
     this.updatedOn = new Date()
     this.createdOn = new Date()
@@ -15,7 +15,7 @@ categorySchema.pre('save', (next) => {
     next()
 })
 
-categorySchema.pre(['update', 'findOneAndUpdate', 'updateOne'], (next) => {
+categorySchema.pre(['update', 'findOneAndUpdate', 'updateOne'],  function(next) {
     const update = this.getUpdate()
    
     delete update._id

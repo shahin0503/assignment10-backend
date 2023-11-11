@@ -10,7 +10,7 @@ const productSchema = new Schema({
     createdOn: { type: Date}
 })
 
-productSchema.pre('save', (next) => {
+productSchema.pre('save',  function(next) {
    
     this.updatedOn = new Date()
     this.createdOn = new Date()
@@ -18,7 +18,7 @@ productSchema.pre('save', (next) => {
     next()
 })
 
-productSchema.pre(['update', 'findOneAndUpdate', 'updateOne'], (next) => {
+productSchema.pre(['update', 'findOneAndUpdate', 'updateOne'],  function(next) {
     const update = this.getUpdate()
    
     delete update._id
