@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const UserRoutes = require('./routes/user_routes')
+const CategoryRoutes = require('./routes/category_routes')
 
 const app = express()
 app.use(bodyParser.json())
@@ -16,6 +17,7 @@ app.use(cors())
 mongoose.connect('mongodb://localhost:27017/ecommerce')
 
 app.use('/api/user', UserRoutes)
+app.use('/api/category', CategoryRoutes)
 
 app.get('/', (req,res)=> {
     res.send('Hello World!!!')
