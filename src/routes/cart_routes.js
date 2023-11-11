@@ -5,4 +5,4 @@ CartRoutes.get('/:user', CartController.getCartForUser)
 CartRoutes.post('/', CartController.addToCart)
 CartRoutes.delete('/', CartController.removeFromCart)
 
-module.exports = CartRoutes 
+module.exports = CartRoutes

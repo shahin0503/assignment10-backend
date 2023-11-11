@@ -8,6 +8,7 @@ const UserRoutes = require('./routes/user_routes')
 const CategoryRoutes = require('./routes/category_routes')
 const ProductRoutes = require('./routes/product_routes')
 const CartRoutes = require('./routes/cart_routes')
+const OrderRoutes = require('./routes/order_routes')
 
 const app = express()
 app.use(bodyParser.json())
@@ -22,6 +23,7 @@ app.use('/api/user', UserRoutes)
 app.use('/api/category', CategoryRoutes)
 app.use('/api/product', ProductRoutes)
 app.use('/api/cart', CartRoutes)
+app.use('/api/order', OrderRoutes)
 
 app.get('/', (req,res)=> {
     res.send('Hello World!!!')
