@@ -15,7 +15,7 @@ app.use(helmet())
 app.use(morgan('dev'))
 app.use(cors())
 
-mongoose.connect('mongodb://localhost:27017/ecommerce')
+mongoose.connect('mongodb+srv://admin:admin@cluster0.aprcmow.mongodb.net/ecommerce?retryWrites=true&w=majority')
 
 app.use('/api/user', UserRoutes)
 app.use('/api/category', CategoryRoutes)
