@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const UserRoutes = require('./routes/user_routes')
 const CategoryRoutes = require('./routes/category_routes')
 const ProductRoutes = require('./routes/product_routes')
+const CartRoutes = require('./routes/cart_routes')
 
 const app = express()
 app.use(bodyParser.json())
@@ -20,6 +21,7 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0.aprcmow.mongodb.net/ecommer
 app.use('/api/user', UserRoutes)
 app.use('/api/category', CategoryRoutes)
 app.use('/api/product', ProductRoutes)
+app.use('/api/cart', CartRoutes)
 
 app.get('/', (req,res)=> {
     res.send('Hello World!!!')
